@@ -1,0 +1,162 @@
+[
+  {
+    "id": "fs001",
+    "name": "Rohit Mehta",
+    "skills": ["react", "node.js", "mongodb", "javascript"],
+    "experience": 3,
+    "current_role": "Full Stack Developer",
+    "expected_salary": 10,
+    "location": "India",
+    "resume_text": "Full stack developer with strong experience in React, Node.js, MongoDB, and REST APIs."
+  },
+  {
+    "id": "fs002",
+    "name": "Neha Kapoor",
+    "skills": ["react", "javascript", "css", "html"],
+    "experience": 2.5,
+    "current_role": "Frontend Developer",
+    "expected_salary": 8,
+    "location": "India",
+    "resume_text": "Frontend developer specializing in React and UI/UX design."
+  },
+  {
+    "id": "fs003",
+    "name": "Aditya Verma",
+    "skills": ["react", "node.js", "aws", "mongodb"],
+    "experience": 4,
+    "current_role": "Full Stack Engineer",
+    "expected_salary": 14,
+    "location": "India",
+    "resume_text": "Experienced in building scalable full stack applications using React, Node.js and AWS."
+  },
+  {
+    "id": "be001",
+    "name": "Arjun Nair",
+    "skills": ["java", "spring boot", "aws", "microservices"],
+    "experience": 4.5,
+    "current_role": "Backend Engineer",
+    "expected_salary": 15,
+    "location": "India",
+    "resume_text": "Backend engineer with strong expertise in Java, Spring Boot and microservices architecture."
+  },
+  {
+    "id": "be002",
+    "name": "Kiran Kumar",
+    "skills": ["java", "spring boot", "sql", "docker"],
+    "experience": 3.5,
+    "current_role": "Backend Developer",
+    "expected_salary": 9,
+    "location": "India",
+    "resume_text": "Backend developer experienced in REST APIs, databases, and containerization."
+  },
+  {
+    "id": "be003",
+    "name": "Rahul Verma",
+    "skills": ["java", "aws", "kubernetes", "mongodb"],
+    "experience": 5.8,
+    "current_role": "Senior Backend Engineer",
+    "expected_salary": 18,
+    "location": "India",
+    "resume_text": "Senior backend engineer with strong cloud and distributed systems experience."
+  },
+  {
+    "id": "ce001",
+    "name": "Vikram Singh",
+    "skills": ["aws", "docker", "kubernetes", "ci/cd"],
+    "experience": 5,
+    "current_role": "Cloud Engineer",
+    "expected_salary": 16,
+    "location": "India",
+    "resume_text": "Cloud engineer specializing in AWS infrastructure and deployment automation."
+  },
+  {
+    "id": "ce002",
+    "name": "Ananya Gupta",
+    "skills": ["aws", "terraform", "docker", "kubernetes"],
+    "experience": 4,
+    "current_role": "DevOps Engineer",
+    "expected_salary": 14,
+    "location": "India",
+    "resume_text": "DevOps engineer with expertise in infrastructure as code and cloud deployments."
+  },
+  {
+    "id": "ml001",
+    "name": "Aditi Rao",
+    "skills": ["python", "tensorflow", "nlp", "machine learning"],
+    "experience": 3,
+    "current_role": "ML Engineer",
+    "expected_salary": 12,
+    "location": "India",
+    "resume_text": "Machine learning engineer working on NLP and deep learning systems."
+  },
+  {
+    "id": "ml002",
+    "name": "Sandeep Reddy",
+    "skills": ["python", "pytorch", "data science", "nlp"],
+    "experience": 4,
+    "current_role": "Data Scientist",
+    "expected_salary": 13,
+    "location": "India",
+    "resume_text": "Data scientist experienced in ML models, NLP, and predictive analytics."
+  },
+  {
+    "id": "gen001",
+    "name": "Priya Sharma",
+    "skills": ["sql", "excel", "python"],
+    "experience": 2,
+    "current_role": "Analyst",
+    "expected_salary": 6,
+    "location": "India",
+    "resume_text": "Data analyst with experience in SQL, reporting, and basic Python."
+  },
+  {
+    "id": "gen002",
+    "name": "Sneha Iyer",
+    "skills": ["java", "react", "mongodb"],
+    "experience": 3,
+    "current_role": "Software Engineer",
+    "expected_salary": 10,
+    "location": "India",
+    "resume_text": "Software engineer with experience across frontend and backend technologies."
+  },
+  {
+    "id": "gen003",
+    "name": "Arjun Reddy",
+    "skills": ["node.js", "sql", "docker"],
+    "experience": 2.8,
+    "current_role": "Backend Developer",
+    "expected_salary": 8,
+    "location": "India",
+    "resume_text": "Backend developer working with Node.js and databases."
+  },
+  {
+    "id": "gen004",
+    "name": "Meera Nair",
+    "skills": ["react", "css", "javascript"],
+    "experience": 1.8,
+    "current_role": "Frontend Developer",
+    "expected_salary": 7,
+    "location": "India",
+    "resume_text": "Frontend developer focused on UI development and responsive design."
+  },
+  {
+    "id": "exp001",
+    "name": "Siddharth Malhotra",
+    "skills": ["aws", "node.js", "sql", "react", "kubernetes"],
+    "experience": 12,
+    "current_role": "Engineering Manager",
+    "expected_salary": 45,
+    "location": "India",
+    "resume_text": "Seasoned leader with deep technical roots in AWS and Full Stack architecture."
+  },
+  {
+    "id": "loc001",
+    "name": "Elena Rodriguez",
+    "skills": ["aws", "node.js", "sql", "react"],
+    "experience": 5,
+    "current_role": "Full Stack Dev",
+    "expected_salary": 85,
+    "location": "Spain",
+    "resume_text": "Full stack expert looking for remote opportunities in European timezones."
+  }
+]
