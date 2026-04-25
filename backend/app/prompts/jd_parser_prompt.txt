@@ -1,0 +1,5 @@
+We are hiring a Machine Learning Engineer with 3–5 years of experience in Python, TensorFlow or PyTorch, and NLP. The candidate should have hands-on experience building and deploying machine learning models. Familiarity with deep learning and data pipelines is a plus.
+We are looking for a Full Stack Developer with strong experience in React, Node.js, and MongoDB. The candidate should have at least 3 years of experience building scalable web applications and working with REST APIs. Cloud deployment experience is a plus.
+Looking for a Backend Engineer with 4+ years of experience in Java, Spring Boot, and AWS. The candidate should have experience building microservices and working with scalable distributed systems.
+Hiring a DevOps Engineer with experience in AWS, Docker, Kubernetes, and CI/CD pipelines. The candidate should have worked on cloud infrastructure and deployment automation.
+We are looking for an iOS Developer with experience in Swift, UIKit, and mobile application development. Candidates should have at least 2 years of experience building mobile apps.
