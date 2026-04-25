@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+/* Main container look */
+h1, h2, h3 {
+  color: #f8fafc;
+}
+
+/* Buttons */
+button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #2563eb;
+  transform: scale(1.02);
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  padding: 12px;
+}
+
+/* Card polish */
+div {
+  box-sizing: border-box;
+}
+
+/* Smooth UI feel */
+* {
+  transition: all 0.15s ease-in-out;
+}
