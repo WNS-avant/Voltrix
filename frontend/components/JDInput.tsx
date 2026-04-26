@@ -12,12 +12,12 @@ export default function JDInput({ value, onChange }: { value: string; onChange: 
         onChange={(e) => onChange(e.target.value)}
         style={{
           width: "100%",
-          boxSizing: "border-box", // 👈 Crucial: prevents padding from causing overflow
+          boxSizing: "border-box",
           padding: "16px",
           borderRadius: "12px",
-          background: "rgba(15, 23, 42, 0.6)", // Darker translucent background
+          background: "rgba(15, 23, 42, 0.6)", 
           border: "1px solid #334155",
-          color: "#f8fafc", // High contrast off-white text
+          color: "#f8fafc", 
           fontSize: "14px",
           lineHeight: "1.6",
           fontFamily: "inherit",
