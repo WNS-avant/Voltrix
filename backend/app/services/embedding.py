@@ -2,25 +2,26 @@ from openai import OpenAI
 import os
 import numpy as np
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+voyage_client = OpenAI(
+    api_key=os.getenv("VOYAGE_API_KEY"),
+    base_url="https://api.voyageai.com/v1"
+)
 
 class EmbeddingService:
     @staticmethod
     def get_embedding(text: str):
-        """Fetches vector from OpenAI Cloud instead of local RAM."""
         try:
-            response = client.embeddings.create(
+            response = voyage_client.embeddings.create(
                 input=text,
                 model="voyage-3" 
             )
             return response.data[0].embedding
         except Exception as e:
-            print(f"Neural Uplink Error: {e}")
+            print(f"Neural Uplink Error (Voyage): {e}")
             return [0.0] * 1024 
 
     @staticmethod
     def similarity(text1: str, text2: str) -> float:
-        """Computes similarity using numpy math (extremely low RAM)."""
         emb1 = np.array(EmbeddingService.get_embedding(text1))
         emb2 = np.array(EmbeddingService.get_embedding(text2))
         
