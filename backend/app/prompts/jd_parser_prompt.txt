@@ -1,5 +1,45 @@
-We are hiring a Machine Learning Engineer with 3–5 years of experience in Python, TensorFlow or PyTorch, and NLP. The candidate should have hands-on experience building and deploying machine learning models. Familiarity with deep learning and data pipelines is a plus.
-We are looking for a Full Stack Developer with strong experience in React, Node.js, and MongoDB. The candidate should have at least 3 years of experience building scalable web applications and working with REST APIs. Cloud deployment experience is a plus.
-Looking for a Backend Engineer with 4+ years of experience in Java, Spring Boot, and AWS. The candidate should have experience building microservices and working with scalable distributed systems.
-Hiring a DevOps Engineer with experience in AWS, Docker, Kubernetes, and CI/CD pipelines. The candidate should have worked on cloud infrastructure and deployment automation.
-We are looking for an iOS Developer with experience in Swift, UIKit, and mobile application development. Candidates should have at least 2 years of experience building mobile apps.
+a) We are hiring a Machine Learning Engineer with 3–5 years of experience in Python, TensorFlow or PyTorch, and NLP. The candidate should have hands-on experience building and deploying machine learning models. Familiarity with deep learning and data pipelines is a plus.
+b) We are looking for a Full Stack Developer with strong experience in React, Node.js, and MongoDB. The candidate should have at least 3 years of experience building scalable web applications and working with REST APIs. Cloud deployment experience is a plus.
+c) Looking for a Backend Engineer with 4+ years of experience in Java, Spring Boot, and AWS. The candidate should have experience building microservices and working with scalable distributed systems.
+d) Hiring a DevOps Engineer with experience in AWS, Docker, Kubernetes, and CI/CD pipelines. The candidate should have worked on cloud infrastructure and deployment automation.
+e)We are looking for an iOS Developer with experience in Swift, UIKit, and mobile application development. Candidates should have at least 2 years of experience building mobile apps.
+
+
+i) The mitochondria is the powerhouse of the cell. Also, I think I left the oven on. Does anyone know how to bake a cake using only a microwave and a dream?
+ii) I am currently looking for a job in Hyderabad. I have 5 years of experience in Java and Spring Boot. Please review my profile and let me know if there are openings.
+
+Need React dev. 3yrs. Remote.
+
+Recruiter: Hi, are you interested in the Backend role?
+Candidate: Honestly, I'm just looking around. I don't really like Python, I prefer Go.
+Recruiter: We really need someone for this. What about your salary?
+Candidate: I won't move for less than 60 LPA, even though I only have 2 years of experience. I'm also planning a 3-month vacation next week.
+
+1. Machine Learning Engineer
+"We are looking to expand our core AI team in Hyderabad with a Machine Learning Engineer who has between 3 and 5 years of professional experience. We need someone who is truly hands-on with Python and has a deep understanding of frameworks like TensorFlow or PyTorch, specifically for NLP applications. You should be comfortable not just building models, but actually deploying them into production environments. If you have a background in deep learning and managing complex data pipelines, that’s a huge plus for us."
+
+2. Full Stack Developer
+"Our team is searching for a Full Stack Developer to help us build out scalable web applications. This is a fully remote position, though we prefer candidates who can align with IST or GMT time zones. We’re looking for a minimum of 3 years of experience, specifically working within the MERN stack—React, Node.js, and MongoDB are essential here. A big part of the role involves designing and maintaining REST APIs. If you’ve handled cloud deployments before, we’d definitely like to hear about that experience as well."
+
+3. Backend Engineer
+"We have an opening for a Senior Backend Engineer at our Bengaluru office with at least 4 years of experience under their belt. Our stack is centered around Java and Spring Boot, and we host everything on AWS, so expertise in those three areas is non-negotiable. We’re looking for an engineer who has a proven track record of building robust microservices and navigating the challenges of scalable distributed systems. This role requires on-site collaboration at least three days a week."
+
+4. DevOps Engineer
+"We’re looking for a DevOps Engineer based in London, UK, with atleast 3.5 years of experience to take ownership of our cloud infrastructure and deployment automation. You should have significant experience managing AWS environments and be an expert when it comes to containerization with Docker and Kubernetes. We’re really looking for someone who can refine our CI/CD pipelines to make our release cycles as seamless and automated as possible. Relocation assistance is available for the right candidate."
+
+5. iOS Developer
+"We are seeking a talented iOS Developer to join our mobile team in San Francisco, CA. We need someone with at least 2 years of experience who is highly proficient in Swift and UIKit. You’ll be responsible for the end-to-end development of our mobile applications, so we’re looking for someone who stays up-to-date with the latest mobile trends and best practices. This is a hybrid role requiring presence in our SoMa office."
+
+8. React Developer
+"I’m urgently looking for a React Developer for a remote-first position based out of Singapore. We need someone with 3 years of experience who can hit the ground running on our frontend projects. It’s a straightforward requirement: strong React skills and the ability to work independently across a distributed team."
+
+The "Noise" Test (For the Domain Wall)
+6. Irrelevant Input
+"I was reading that the mitochondria is the powerhouse of the cell, which is fascinating, but honestly, I’m more stressed because I think I left the oven on. Does anyone actually know how to bake a cake using only a microwave and a dream? I could really use a snack right now."
+
+Candidate Profiles & Logs (For the Matcher & Intent Decoder)
+7. Candidate Profile (Java/Hyderabad)
+"I am a backend specialist currently based in Hyderabad and looking for my next opportunity locally. I’ve spent the last 5 years working extensively with Java and Spring Boot to build enterprise-level applications. I’m looking for a role where I can apply my experience in a fast-paced environment here in the city—please let me know if you have any relevant openings."
+
+9. Behavioral Analysis Log (The "Red Flag" Candidate)
+"I just got off a call with a candidate for the Backend role. It was a bit of a strange interaction. When I asked about the stack, he mentioned he doesn't really like Python and would much rather work in Go. He’s only got 2 years of experience, but he told me he won't even consider an offer for less than 60 LPA. On top of that, he’s planning to leave for a 3-month vacation starting next week. He seems like he's just 'looking around' rather than actually being interested in joining us."
