@@ -1,5 +1,13 @@
-const API_BASE_URL = "https://voltrix-3.onrender.com";
+import axios from 'axios';
 
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+export const api = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
 export async function parseJD(jdText: string) {
   const res = await fetch(`${BASE_URL}/jd/parse`, {
     method: "POST",
