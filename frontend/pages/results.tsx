@@ -37,16 +37,14 @@ const dynamicCandidates = candidates.map((c: any) => {
     return { ...c, final_score: newScore };
 }).sort((a: any, b: any) => b.final_score - a.final_score);
 
-  // Shortlist logic: High match + High Interest
- // CHANGE THIS:
+ 
 const shortlist = dynamicCandidates.filter(
-  (c: any) => c.final_score > 0.7 && c.interest_score > 0.4 // Use dynamicCandidates here
+  (c: any) => c.final_score > 0.7 && c.interest_score > 0.4 
 );
 
   return (
     
     <div style={styles.pageWrapper}>
-      {/* HEADER SECTION */}
       <header style={styles.header}>
         <div>
           <h1 style={styles.title}>🎯 Candidate Intelligence Dashboard</h1>
@@ -55,7 +53,6 @@ const shortlist = dynamicCandidates.filter(
         <button onClick={() => router.push("/")} style={styles.backBtn}>New Search</button>
       </header>
 
-      {/* DASHBOARD STATS & JD INFO */}
       <div style={styles.topGrid}>
         <div style={styles.parsedCard}>
   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -72,7 +69,6 @@ const shortlist = dynamicCandidates.filter(
       <span style={styles.detailLabel}>REQUIRED EXPERIENCE</span>
       <span style={styles.detailValue}>{parsed?.experience_min}+ Years</span>
     </div>
-    {/* Optional: Add location/salary if your parser extracts them */}
     <div style={styles.jdDetailItem}>
       <span style={styles.detailLabel}>LOCATION</span>
       <span style={styles.detailValue}>{parsed?.location || "Remote / Not Specified"}</span>
@@ -89,12 +85,10 @@ const shortlist = dynamicCandidates.filter(
       <span key={s} style={styles.pill}>{s}</span>
     ))}
   </div>
-  {/* 🚀 NEW: Target Profile Analysis */}
 <div style={styles.jdSummarySection}>
   <span style={styles.detailLabel}>TARGET PROFILE ANALYSIS</span>
   <div style={styles.summaryContent}>
     <p style={styles.summaryText}>
-      {/* Fallback to a generated summary if your parser doesn't have one */}
       {parsed?.ai_summary || `Seeking a ${parsed?.role || 'professional'} with a focus on ${parsed?.skills?.slice(0, 2).join(' & ') || 'core technologies'}. The ideal candidate demonstrates high proficiency in modern development workflows and matches the required ${parsed?.experience_min}+ years of industry expertise.`}
     </p>
     <div style={styles.priorityGrid}>
@@ -128,7 +122,6 @@ const shortlist = dynamicCandidates.filter(
     </div>
   ))}
 
-  {/* 🚀 NEW: Data Summary Section to fill the space */}
   <div style={styles.matchSummary}>
     <div style={styles.summaryItem}>
       <span style={styles.summaryLabel}>TOTAL SCANNED</span>
@@ -142,7 +135,6 @@ const shortlist = dynamicCandidates.filter(
 
   <div style={styles.dividerSmall} />
 
-  {/* 📍 Move the Distribution Bar inside here */}
   <div>
     <span style={styles.detailLabel}>TALENT POOL DISTRIBUTION</span>
     <div style={styles.qualityBar}>
@@ -162,7 +154,6 @@ const shortlist = dynamicCandidates.filter(
 
       </div>
 
-      {/* SHORTLIST SECTION */}
       {shortlist.length > 0 && (
         <section style={styles.section}>
           <h2 style={styles.sectionTitle}>🏆 Top Recommendations</h2>
@@ -173,11 +164,9 @@ const shortlist = dynamicCandidates.filter(
         </section>
       )}
 
-      {/* FULL PIPELINE SECTION */}
       <section style={styles.section}>
         <h2 style={styles.sectionTitle}>📋 Full Pipeline</h2>
         <div style={styles.grid}>
-          {/* Change 'candidates.map' to 'dynamicCandidates.map' */}
 {dynamicCandidates.map((c: any, i: number) => (
 <CandidateCard key={`all-${c.candidate_id || i}`} candidate={{ ...c, rank: i + 1 }} />))}
         </div>
@@ -191,7 +180,7 @@ const shortlist = dynamicCandidates.filter(
 const styles: any = {
   pageWrapper: {
     padding: "40px",
-    background: "#0f172a", // Deep slate background
+    background: "#0f172a", 
     minHeight: "100vh",
     color: "#f8fafc",
     fontFamily: "'Inter', sans-serif",
@@ -245,7 +234,7 @@ const styles: any = {
   borderRadius: "5px",
   background: "#334155",
   outline: "none",
-  accentColor: "#818cf8", // This makes the "knob" purple
+  accentColor: "#818cf8", 
   cursor: "pointer",
   marginTop: "8px",
   marginBottom: "4px"
@@ -300,7 +289,7 @@ jdMainInfo: {
   },
   qualitySegment: {
     height: "100%",
-    transition: "width 0.8s cubic-bezier(0.4, 0, 0.2, 1)", // Smooth animation when ranking changes
+    transition: "width 0.8s cubic-bezier(0.4, 0, 0.2, 1)", 
   },
   matchSummary: {
     display: "flex",
