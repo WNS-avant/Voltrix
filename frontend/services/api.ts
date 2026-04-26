@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000"; // Updated to include /api prefix
+const API_BASE_URL = "https://voltrix-3.onrender.com";
 
 export async function parseJD(jdText: string) {
   const res = await fetch(`${BASE_URL}/jd/parse`, {
