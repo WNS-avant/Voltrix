@@ -15,13 +15,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for hackathon, keep it simple
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Register routes
 app.include_router(jd_router, prefix="/jd", tags=["Job Description"])
 app.include_router(candidate_router, prefix="/candidates", tags=["Candidates"])
 app.include_router(chat_router, prefix="/chat", tags=["Conversation"])
