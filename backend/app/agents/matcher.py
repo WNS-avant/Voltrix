@@ -41,23 +41,19 @@ class MatcherAgent:
 
     @staticmethod
     def match(jd, candidate):
-        # 🛡️ Safety: Handle both Object and Dict
         jd_skills = jd.skills if hasattr(jd, 'skills') else jd.get('skills', [])
         jd_exp = jd.experience_min if hasattr(jd, 'experience_min') else jd.get('experience_min', 0)
         jd_role = jd.role if hasattr(jd, 'role') else jd.get('role', '')
 
-        # 🔹 New Skill Analysis
         skill_score, matched, missing = MatcherAgent.analyze_skills(jd_skills, candidate.skills)
         exp_score = MatcherAgent.compute_experience_score(jd_exp, candidate.experience)
 
-        # 🧠 Semantic Context
         semantic_input = f"Role: {jd_role}. Required Skills: {', '.join(jd_skills)}"
         semantic = EmbeddingService.similarity(semantic_input, candidate.resume_text)
 
         result = MatchResult(skill_score, exp_score, semantic)
         final_score = result.final_score
 
-        # 🔥 Penalty for 0 skill match
         if skill_score == 0:
             final_score *= 0.4 
 
@@ -77,18 +73,15 @@ class MatcherAgent:
     def explain(skill, exp, semantic, missing):
         reasons = []
     
-    # Skill logic - FIXED the double 'Missing' here
         if skill > 0.8: 
             reasons.append("Excellent skill alignment")
         elif skill > 0.4: 
             reasons.append("Good core skill match")
         elif missing: 
-        # Just use the skill name, the context handles the rest
             reasons.append(f"Gap in {missing[0]}") 
         else:
             reasons.append("Technical requirements not fully met")
 
-    # Experience logic
         if exp == 1.0: 
             reasons.append("Meets experience criteria")
         elif exp > 0.6: 
