@@ -1,5 +1,4 @@
 export default function ScoreBadge({ label, value }: { label: string; value: number }) {
-  // Logic for dynamic status colors
   const getStatusConfig = (val: number) => {
     if (val >= 0.75) return { bg: "#DCFCE7", text: "#166534", dot: "#22C55E", label: "High" };
     if (val >= 0.5) return { bg: "#FEF9C3", text: "#854D0E", dot: "#EAB308", label: "Med" };
@@ -15,7 +14,7 @@ export default function ScoreBadge({ label, value }: { label: string; value: num
         alignItems: "center",
         gap: "6px",
         padding: "4px 10px",
-        borderRadius: "12px", // Pill shape
+        borderRadius: "12px", 
         background: config.bg,
         color: config.text,
         fontSize: "11px",
