@@ -2,7 +2,6 @@ from openai import OpenAI
 import os
 import numpy as np
 
-# Load the client using your existing API Key env var
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 class EmbeddingService:
@@ -17,7 +16,7 @@ class EmbeddingService:
             return response.data[0].embedding
         except Exception as e:
             print(f"Neural Uplink Error: {e}")
-            return [0.0] * 1536 
+            return [0.0] * 1024 
 
     @staticmethod
     def similarity(text1: str, text2: str) -> float:
