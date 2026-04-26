@@ -6,30 +6,28 @@ import JDInput from "../components/JDInput";
 export default function Home() {
   const [jd, setJd] = useState("");
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState({ type: "", message: "" }); // 🔹 New State
+  const [status, setStatus] = useState({ type: "", message: "" }); 
   const router = useRouter();
 
 const handleSearch = async () => {
   setLoading(true);
-  setStatus({ type: "", message: "" }); // 1. Clear previous errors
+  setStatus({ type: "", message: "" }); 
   
   try {
     const resultsData = await matchCandidates(jd);
-    // ✅ This ONLY runs if res.ok was true
     localStorage.setItem("results", JSON.stringify(resultsData));
     router.push("/results");
 } catch (error) {
   console.error("Bouncer Blocked:", error);
   
-  // Use the message we just threw from api.ts
   const serverMessage = error.message || "Please provide a valid Job Description.";
   
   if (error.status === 429) {
     setStatus({
-      type: "jargon", // Keeps the yellow warning styling
+      type: "jargon", 
       message: "🚀 You chewed through the tokens! Chill for a while (about 10 mins) and let the API breathe."
     });
-    return; // Stop here so we don't run the seeker/jargon logic
+    return; 
   }
 
   const isSeeker = serverMessage.toLowerCase().includes("seeker");
@@ -41,7 +39,6 @@ const handleSearch = async () => {
       : `⚠️ Scan Failed: ${serverMessage}`
   });
 } finally {
-    // 6. Stop the spinner so the user can see the status message
     setLoading(false);
   }
 };
@@ -49,7 +46,6 @@ const handleSearch = async () => {
   return (
     <div style={styles.container}>
       <div style={styles.contentBox}>
-        {/* 🔥 BRANDING */}
         <header style={styles.header}>
           <div style={styles.logoIcon}>🎯</div>
           <h1 style={styles.title}>Voltrix</h1>
@@ -58,7 +54,6 @@ const handleSearch = async () => {
           </p>
         </header>
 
-        {/* 🧾 INPUT SECTION */}
         <div style={styles.inputWrapper}>
           <JDInput value={jd} onChange={setJd} />
           
@@ -77,7 +72,6 @@ const handleSearch = async () => {
               "Analyze & Match Candidates"
             )}
           </button>
-              {/* 🔹 Inline Feedback UI */}
           {status.message && (
             <div style={{
               ...styles.statusBox,
@@ -91,8 +85,6 @@ const handleSearch = async () => {
         </div>
           
        
-
-        {/* 🧠 AI FEATURE BITS */}
         <div style={styles.footerInfo}>
           <div style={styles.infoCard}>
             <span>🔍</span>
@@ -108,7 +100,6 @@ const handleSearch = async () => {
           </div>
         </div>
 
-        {/* ⚠️ LOADING OVERLAY */}
         {loading && (
           <div style={styles.overlay}>
             <div style={styles.spinner} />
@@ -122,8 +113,6 @@ const handleSearch = async () => {
   );
 }
 
-
-// Add this at the top of your index.tsx or in your layout
 <style jsx global>{`
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-5px); }
@@ -139,7 +128,7 @@ const handleSearch = async () => {
 const styles: any = {
   container: {
     minHeight: "100vh",
-    background: "#0f172a", // Match the results page
+    background: "#0f172a", 
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -184,7 +173,7 @@ const styles: any = {
   statusBox: {
   marginTop: "20px",
   padding: "15px",
-  background: "rgba(220, 38, 38, 0.1)", // Subtle red tint
+  background: "rgba(220, 38, 38, 0.1)", 
   borderRadius: "8px",
   border: "1px solid",
   display: "flex",
