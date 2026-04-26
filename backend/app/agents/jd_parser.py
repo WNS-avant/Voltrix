@@ -25,6 +25,8 @@ Only if is_valid is true, extract the following:
 2. SKILLS: A flat list of technical skills. Normalize (e.g., "ReactJS" -> "react", "Node.js" -> "node.js").
 3. EXPERIENCE_MIN: The minimum years of experience. If a range is given (e.g., "3-5 years"), take the lower number (3). If not mentioned, use 0.
 4. SENIORITY: Categorize as: junior, mid, senior, lead, or null.
+5. LOCATION: Extract the city or 'Remote' if specified.
+6. AI_SUMMARY: A professional, one-sentence summary of the target profile (e.g., "Expert ML Engineer with a focus on production NLP pipelines").
 
 ### OUTPUT RULES:
 - Return ONLY a raw JSON object. No conversational filler or markdown blocks.
@@ -36,47 +38,32 @@ Only if is_valid is true, extract the following:
   "reason": "Explain WHY it was rejected (e.g., 'Detected Job Seeker intent instead of Hiring intent') or null if valid",
   "role": "string",
   "skills": ["string"],
-  "experience_min": integer,
-  "seniority": "string | null"
+  "experience_min": float,
+  "seniority": "string | null",
+  "location": "string"
+  "ai_summary": "string"
 }
 """
 
 SKILL_MAP = {
-
     "reactjs": "react",
-
     "react.js": "react",
-
     "node": "node.js",
-
     "nodejs": "node.js",
-
     "ml": "machine learning",
-
     "ai": "machine learning",
-
     "nlp": "nlp",
-
     "tensorflow": "tensorflow",
-
     "pytorch": "pytorch",
-
     "aws": "aws",
-
     "spring": "spring boot",
-
     "springboot": "spring boot"
-
 }
 
 KNOWN_SKILLS = [
-
     "react", "node.js", "mongodb", "javascript",
-
     "java", "spring boot", "aws", "docker", "kubernetes",
-
     "python", "tensorflow", "pytorch", "nlp", "machine learning"
-
 ]
 
 class JDParserAgent:
@@ -103,6 +90,28 @@ class JDParserAgent:
         return existing_skills
 
     @staticmethod
+    def normalize_experience(exp_raw: any) -> float:
+        """
+        Extracts numeric values from raw input and handles unit conversion.
+        Ensures '6 months' becomes 0.5 and '3.5 years' stays 3.5.
+        """
+        if exp_raw is None: 
+            return 0.0
+        
+        s = str(exp_raw).lower().strip()
+        
+        numbers = re.findall(r"[-+]?\d*\.\d+|\d+", s)
+        if not numbers:
+            return 0.0
+        
+        val = float(numbers[0])
+
+        if "month" in s:
+            return round(val / 12, 2)
+            
+        return val
+
+    @staticmethod
     def parse(jd_text: str) -> ParsedJD:
         user_prompt = f"Job Description:\n{jd_text}"
         
@@ -127,16 +136,15 @@ class JDParserAgent:
             final_skills = JDParserAgent.enrich_from_text(jd_text, normalized)
 
             exp_raw = data.get("experience_min", 0)
-            try:
-                exp_val = int(re.sub(r"\D", "", str(exp_raw))) if exp_raw else 0
-            except:
-                exp_val = 0
+            exp_val = JDParserAgent.normalize_experience(exp_raw)
 
             return ParsedJD(
                 role=str(data.get("role", "Unknown")),
                 skills=final_skills,
                 experience_min=exp_val,
                 seniority=data.get("seniority"),
+                location=data.get("location", "Remote"),
+                ai_summary=data.get("ai_summary", "Vector analysis complete."),
                 is_valid=True
             )
 
@@ -145,7 +153,7 @@ class JDParserAgent:
             return ParsedJD(
                 role="Error", 
                 skills=[], 
-                experience_min=0, 
+                experience_min=0.0, 
                 is_valid=False, 
                 friendly_message=f"Agent Error: {str(e)}"
             )
