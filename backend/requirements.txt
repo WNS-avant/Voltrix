@@ -1,6 +1,7 @@
 fastapi
 uvicorn
+pydantic
 openai
+numpy
 python-dotenv
-sentence-transformers
-scikit-learn
+httpx
