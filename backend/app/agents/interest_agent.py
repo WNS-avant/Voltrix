@@ -16,8 +16,7 @@ class InterestAgent:
         """
         Generates both the Interest Score and the AI Pitch.
         """
-        # 🔹 Contextual data for the LLM
-        # We include the 'missing' skills so the AI can mention gaps honestly.
+       
         user_prompt = f"""
         Role: {jd.role}
         Candidate: {candidate.name}
@@ -40,7 +39,6 @@ class InterestAgent:
         raw_response = LLMClient.chat(InterestAgent.SYSTEM_PROMPT, user_prompt)
 
         try:
-            # Clean markdown formatting if present
             clean_json = raw_response.replace("```json", "").replace("```", "").strip()
             data = json.loads(clean_json)
             
