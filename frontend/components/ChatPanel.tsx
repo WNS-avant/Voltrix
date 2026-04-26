@@ -3,7 +3,7 @@ import { evaluateInterest } from "../services/api";
 
 export default function ChatPanel() {
   const [conversation, setConversation] = useState("");
-  const [loading, setLoading] = useState(false); // 🔥 Added loading
+  const [loading, setLoading] = useState(false); 
   const [result, setResult] = useState<any>(null);
 
   const handleEvaluate = async () => {
@@ -14,7 +14,6 @@ export default function ChatPanel() {
         role: "Backend Engineer",
         conversation,
       });
-      // res usually contains { interest_score, analysis, summary }
       setResult(res);
     } catch (error) {
       alert("Analysis failed. Check backend logs.");
