@@ -5,7 +5,6 @@ class JobDescription(BaseModel):
     text: str
 
 class ParsedJD(BaseModel):
-    # Change these to have defaults so the constructor never fails
     role: str = "Unknown"
     skills: List[str] = []
     experience_min: int = 0
