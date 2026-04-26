@@ -19,10 +19,8 @@ export async function matchCandidates(jdText: string) {
     body: JSON.stringify({ jd_text: jdText }),
   });
 
-  // 🛑 MANUAL STOP: Fetch won't trigger the catch block automatically for 400s
   if (!res.ok) {
     const errorData = await res.json();
-    // We throw an error here so that index.tsx actually jumps to its 'catch' block
     throw {
         status: res.status,
         message: errorData.detail || "Invalid Request"
