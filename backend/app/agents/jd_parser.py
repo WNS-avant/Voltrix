@@ -78,7 +78,6 @@ KNOWN_SKILLS = [
     "python", "tensorflow", "pytorch", "nlp", "machine learning"
 
 ]
-# ... (Keep your SKILL_MAP and KNOWN_SKILLS as they are)
 
 class JDParserAgent:
 
@@ -109,16 +108,13 @@ class JDParserAgent:
         
         try:
             response = LLMClient.chat(SYSTEM_PROMPT, user_prompt)
-            # 🟢 Force print the response immediately
             print(f"--- RAW LLM RESPONSE ---\n{response}\n-----------------------", flush=True)
 
-            # Pre-clean response: sometimes LLMs wrap JSON in ```json blocks
             clean_response = response.replace("```json", "").replace("```", "").strip()
             data = json.loads(clean_response)
             
             print(f"DEBUG: is_valid={data.get('is_valid')} | role={data.get('role')}", flush=True)
 
-            # Check validity
             if not data.get("is_valid", True):
                 return ParsedJD(
                     role="Invalid", 
@@ -126,15 +122,12 @@ class JDParserAgent:
                     friendly_message=data.get("reason", "Not a valid job description.")
                 )
 
-            # Skill Processing
             raw_skills = data.get("skills", [])
             normalized = JDParserAgent.normalize_skills(raw_skills)
             final_skills = JDParserAgent.enrich_from_text(jd_text, normalized)
 
-            # Experience logic
             exp_raw = data.get("experience_min", 0)
             try:
-                # Extracts digits from strings like "3 years" or "5+"
                 exp_val = int(re.sub(r"\D", "", str(exp_raw))) if exp_raw else 0
             except:
                 exp_val = 0
@@ -148,7 +141,6 @@ class JDParserAgent:
             )
 
         except Exception as e:
-            # 🔴 This will tell us EXACTLY what broke
             print(f"CRITICAL ERROR IN PARSE: {str(e)}", flush=True)
             return ParsedJD(
                 role="Error", 
