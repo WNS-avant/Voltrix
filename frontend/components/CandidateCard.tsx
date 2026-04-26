@@ -1,5 +1,4 @@
 export default function CandidateCard({ candidate }: any) {
-  // 1. Logic for dynamic badge styling
   const getBadgeStyles = () => {
     if (candidate.final_score > 0.75) return { bg: "#064e3b", text: "#6ee7b7", label: "🔥 Top Talent" };
     if (candidate.final_score > 0.6) return { bg: "#1e3a8a", text: "#93c5fd", label: "✅ Strong Fit" };
@@ -9,7 +8,6 @@ export default function CandidateCard({ candidate }: any) {
 
   const badge = getBadgeStyles();
 
-  // 2. Helper for colored progress bars
   const getBarColor = (score: number) => {
     if (score >= 0.75) return "#22c55e"; 
     if (score >= 0.5) return "#eab308";  
@@ -28,7 +26,6 @@ export default function CandidateCard({ candidate }: any) {
         </span>
       </div>
 
-      {/* 🚀 NEW: Skill Analysis Section */}
       <div style={styles.skillSection}>
         {candidate.matched_skills?.map((s: string) => (
           <span key={s} style={{ ...styles.pill, ...styles.matchPill }}>✓ {s}</span>
@@ -38,7 +35,6 @@ export default function CandidateCard({ candidate }: any) {
         ))}
       </div>
 
-      {/* Metric Grid */}
       <div style={styles.metricGrid}>
         {[
           { label: "Skill Match", val: candidate.skill_score },
@@ -68,9 +64,7 @@ export default function CandidateCard({ candidate }: any) {
 
       <div style={styles.divider} />
 
-      {/* AI Intelligence Section */}
       <div style={styles.aiSection}>
-        {/* ✨ The New AI Pitch */}
         {candidate.ai_summary && (
           <div style={styles.insightBox}>
             <span style={{ color: "#818cf8", fontWeight: "bold", display: "block", marginBottom: "4px", fontSize: "10px" }}>✨ AI INSIGHT</span>
@@ -78,14 +72,12 @@ export default function CandidateCard({ candidate }: any) {
           </div>
         )}
         
-        {/* The Technical Explanation */}
         <div style={styles.interestBox}>
           <span style={{ marginRight: "8px" }}>🤖</span>
           {candidate.explanation}
         </div>
       </div>
 
-{/* 🎤 INTERVIEW QUESTIONS SECTION */}
 {candidate.interview_questions && candidate.interview_questions.length > 0 && (
   <div style={styles.interviewSection}>
     <span style={styles.interviewLabel}> Suggested Interview Questions:</span>
