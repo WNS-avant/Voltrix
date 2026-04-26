@@ -8,7 +8,6 @@ class CandidateStore:
     def __init__(self):
         base_dir = os.path.dirname(__file__)
 
-        # Go to project root
         project_root = os.path.abspath(os.path.join(base_dir, "../../../"))
         self.path = os.path.join(project_root, "data", "candidates.json")
 
