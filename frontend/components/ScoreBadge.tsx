@@ -1,8 +1,8 @@
 export default function ScoreBadge({ label, value }: { label: string; value: number }) {
   const getStatusConfig = (val: number) => {
-    if (val >= 0.75) return { bg: "#DCFCE7", text: "#166534", dot: "#22C55E", label: "High" };
-    if (val >= 0.5) return { bg: "#FEF9C3", text: "#854D0E", dot: "#EAB308", label: "Med" };
-    return { bg: "#FEE2E2", text: "#991B1B", dot: "#EF4444", label: "Low" };
+    if (val >= 0.75) return { border: "#00ff00", glow: "rgba(0, 255, 0, 0.2)", label: "OPTIMAL" };
+    if (val >= 0.5) return { border: "#eab308", glow: "rgba(234, 179, 8, 0.2)", label: "STABLE" };
+    return { border: "#ef4444", glow: "rgba(239, 68, 68, 0.2)", label: "DEGRADED" };
   };
 
   const config = getStatusConfig(value);
@@ -12,21 +12,28 @@ export default function ScoreBadge({ label, value }: { label: string; value: num
       style={{
         display: "inline-flex",
         alignItems: "center",
-        gap: "6px",
-        padding: "4px 10px",
-        borderRadius: "12px", 
-        background: config.bg,
-        color: config.text,
-        fontSize: "11px",
-        fontWeight: "600",
-        fontFamily: "Inter, system-ui, sans-serif",
+        gap: "8px",
+        padding: "4px 12px",
+        borderRadius: "4px",
+        background: "rgba(0, 0, 0, 0.3)",
+        color: config.border,
+        fontSize: "10px",
+        fontWeight: "900",
+        fontFamily: "'JetBrains Mono', monospace",
         textTransform: "uppercase",
-        letterSpacing: "0.025em",
-        border: `1px solid rgba(0,0,0,0.05)`
+        letterSpacing: "1px",
+        border: `1px solid ${config.border}`,
+        boxShadow: `inset 0 0 8px ${config.glow}`,
       }}
     >
-      <span style={{ height: "6px", width: "6px", borderRadius: "50%", background: config.dot }} />
-      <span>{label}: {value.toFixed(2)}</span>
+      <span style={{ 
+        height: "5px", 
+        width: "5px", 
+        background: config.border, 
+        boxShadow: `0 0 6px ${config.border}` 
+      }} />
+      <span>{label.replace('_', ' ')}: {(value * 100).toFixed(0)}%</span>
+      <span style={{ opacity: 0.4, marginLeft: '4px' }}>[{config.label}]</span>
     </div>
   );
 }
