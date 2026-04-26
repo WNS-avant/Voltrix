@@ -5,11 +5,10 @@ from typing import List
 
 router = APIRouter()
 
-# 🛡️ Define the structure for incoming candidates
 class CandidateScoreInput(BaseModel):
     candidate_id: str
     name: str
-    final_score: float  # Mapping the Matcher's technical score
+    final_score: float  
     interest_score: float
 
 class ShortlistRequest(BaseModel):
@@ -21,7 +20,6 @@ def generate_shortlist(payload: ShortlistRequest):
     Final decision route. 
     Expects technical 'final_score' and behavioral 'interest_score'.
     """
-    # Convert Pydantic list to dicts for the Agent
     candidate_dicts = [c.dict() for c in payload.candidates]
     
     ranked = RankingAgent.rank_candidates(candidate_dicts)
