@@ -11,7 +11,7 @@ class EmbeddingService:
         try:
             response = client.embeddings.create(
                 input=text,
-                model="text-embedding-3-small" 
+                model="voyage-3" 
             )
             return response.data[0].embedding
         except Exception as e:
