@@ -6,12 +6,10 @@ body {
   color: #e2e8f0;
 }
 
-/* Main container look */
 h1, h2, h3 {
   color: #f8fafc;
 }
 
-/* Buttons */
 button {
   background: #3b82f6;
   color: white;
@@ -28,7 +26,7 @@ button:hover {
   transform: scale(1.02);
 }
 
-/* Textarea */
+
 textarea {
   width: 100%;
   max-width: 800px;
@@ -39,12 +37,10 @@ textarea {
   padding: 12px;
 }
 
-/* Card polish */
 div {
   box-sizing: border-box;
 }
 
-/* Smooth UI feel */
 * {
   transition: all 0.15s ease-in-out;
 }
