@@ -21,6 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Register routes
 app.include_router(jd_router, prefix="/jd", tags=["Job Description"])
 app.include_router(candidate_router, prefix="/candidates", tags=["Candidates"])
 app.include_router(chat_router, prefix="/chat", tags=["Conversation"])
@@ -31,5 +32,5 @@ app.include_router(rank_router, prefix="/rank", tags=["Ranking"])
 def health_check():
     return {
         "status": "running",
-        "message": "AI Talent Scout Agent is alive"
+        "message": "Voltrix - AI Talent Scout Agent is alive"
     }
